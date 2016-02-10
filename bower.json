@@ -1,0 +1,23 @@
+{
+  "name": "webplayground1",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Arjan Einbu"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-ui-router": "^0.2.18",
+    "angular": "^1.5.0"
+  }
+}
