@@ -15,7 +15,13 @@ var babel = require("gulp-babel");
 var cssnano = require("gulp-cssnano");
 var htmlreplace = require("gulp-html-replace")
 var browserSync = require('browser-sync').create();
-
+var mainBowerFiles = require('gulp-main-bower-files');
+ 
+gulp.task("bower-files", function(){
+    return gulp.src("bower.json")
+        .pipe(mainBowerFiles())
+        .pipe(gulp.dest(jsDestPath));
+});
 
 gulp.task('serve', ['build'], function(){
     browserSync.init({
@@ -42,7 +48,7 @@ gulp.task("build-js", ["clean-js"], function(){
     return gulp.src(jsSrcPath + "**/*.js")
         .pipe(sourcemaps.init())
         .pipe(concat("app.js"))
-        .pipe(babel())
+        // .pipe(babel())
         .pipe(gulp.dest(jsDestPath))
         .pipe(uglify())
         .pipe(rename("app.min.js"))
