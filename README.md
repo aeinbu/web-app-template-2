@@ -2,14 +2,6 @@
 A starter template for the build process for a web client.
 This template includes babel, so ES6 is supported and compiled down to ES5.
 
-## Prerequisites
-- node v. 5+
-- npm
-- git-scm
-- gulp installed globally
-
-
-
 # web-app-template
 A starter template for the build process for a web client.
 This template includes babel, so ES6 is supported and compiled down to ES5.
