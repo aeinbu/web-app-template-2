@@ -17,16 +17,10 @@ var htmlreplace = require("gulp-html-replace")
 var browserSync = require('browser-sync').create();
 var mainBowerFiles = require('gulp-main-bower-files');
  
-gulp.task("bower-files", function(){
-    return gulp.src("bower.json")
-        .pipe(mainBowerFiles())
-        .pipe(gulp.dest(jsDestPath));
-});
-
 gulp.task('serve', ['build'], function(){
     browserSync.init({
         server:{
-            baseDir: './'
+            baseDir: 'dist'
         }
     });
     
@@ -38,9 +32,26 @@ gulp.task('serve', ['build'], function(){
 
 
 gulp.task("default", ["build"]);
-gulp.task("build", ["build-js", "build-html-templates", "build-css", "build-index-html"]);
+gulp.task("build", ["build-js", "build-bower-files", "build-html-templates", "build-css", "build-index-html"]);
 gulp.task("clean", function(){
     return del("dist/*");
+});
+
+
+gulp.task("build-bower-files", ["clean-bower-files"], function(){
+    return gulp.src("bower.json")
+        .pipe(mainBowerFiles())
+        .pipe(sourcemaps.init())
+        .pipe(concat("extlibs.js"))
+        .pipe(gulp.dest(jsDestPath))
+        .pipe(uglify())
+        .pipe(rename("extlibs.min.js"))
+        .pipe(sourcemaps.write(".", { includeContent: false, sourceRoot: "../../lib"}))
+        .pipe(gulp.dest(jsDestPath));
+});
+
+gulp.task("clean-bower-files", function(){
+    return del([jsDestPath + "extlibs.js"]);
 });
 
 
@@ -90,7 +101,7 @@ gulp.task("clean-css", function(){
 gulp.task("build-index-html", ["clean-index-html"], function(){
     return gulp.src("*.html")
         .pipe(htmlreplace({
-            js: [jsDestPath + "app.min.js"],
+            js: [jsDestPath + "extlibs.min.js", jsDestPath + "app.min.js"],
             css: [cssDestPath + "styles.min.css"]
         }))
         .pipe(gulp.dest(rootDestPath));
