@@ -1,7 +1,8 @@
+This template focus is on the build process
 # web-app-template-2
 A starter template for the build process for a web client.
 This template includes babel, so ES6 is supported and compiled down to ES5.
-This template should work equally well wether you develop on Windows, Mac and Linux.
+This template should work equally well wether you develop on Windows, Mac or Linux.
 
 ##Computer wide setup
 You need to do this once on your dev-machine. (Safe to do multiple times)
