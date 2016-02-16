@@ -1,7 +1,3 @@
-# web-app-template-2
-A starter template for the build process for a web client.
-This template includes babel, so ES6 is supported and compiled down to ES5.
-
 # web-app-template
 A starter template for the build process for a web client.
 This template includes babel, so ES6 is supported and compiled down to ES5.
