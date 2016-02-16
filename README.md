@@ -9,20 +9,6 @@ This template includes babel, so ES6 is supported and compiled down to ES5.
 - gulp installed globally
 
 
-```
-npm i -g gulp
-git clone https://github.com/aeinbu/web-app-template-2.git
-cd web-app-template-2
-npm update
-gulp build
-```
-
-To run the development webserver (browsersync running on node)
-```
-gulp serve
-```
-
-
 
 # web-app-template
 A starter template for the build process for a web client.
@@ -40,6 +26,12 @@ You need to do this once on your dev-machine. (Safe to do multiple times)
 
 ##Setup a new web project
 Download or clone this project template, and remove the `.git` folder
+
+```
+git clone https://github.com/aeinbu/web-app-template-2.git
+cd web-app-template-2
+npm update
+````
 
 ##Update an existing web project
 Do this if after you cloned/checked out a project, or if there are missing script references. (Safe to do multiple times)
