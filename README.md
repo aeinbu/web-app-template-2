@@ -12,6 +12,7 @@ You need to do this once on your dev-machine. (Safe to do multiple times)
 - Install a good code editor. (I used Visual Studio Code for this template.)
 - Open command prompt
   - run `npm install -g gulp` (You might need to use sudo on macs: `sudo npm install -g gulp`)
+  - run `npm install -g bower` (You might need to use sudo on macs: `sudo npm install -g bower`)
 
 ##Setup a new web project
 Download or clone this project template, and remove the `.git` folder
@@ -20,17 +21,20 @@ Download or clone this project template, and remove the `.git` folder
 git clone https://github.com/aeinbu/web-app-template-2.git
 cd web-app-template-2
 npm update
+bower update
 ````
 
 ##Update an existing web project
 Do this if after you cloned/checked out a project, or if there are missing script references. (Safe to do multiple times)
 - Open command prompt in the web project folder in the filesystem
   - run `npm update`
+  - run `bower update`
 
 ##Adding a new library to a project
 This is how you add a new JavaScript library to a project.
 - Open command prompt in the web project folder in the filesystem
   - For npm run `npm install npm_lib_to_inst --save` (Replace npm_lib_to_inst with the name of the new reference)
+  - For bower run `bower install bower_lib_to_inst --save` (Replace bower_lib_to_inst with the name of the new reference)
 
 ##Running the website on your dev-computer
 - Open command prompt in the web project folder in the filesystem
