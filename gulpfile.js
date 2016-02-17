@@ -110,5 +110,3 @@ gulp.task("build-index-html", ["clean-index-html"], function(){
 gulp.task("clean-index-html", function(){
     return del([rootDestPath + "*.html"]);
 });
-
-

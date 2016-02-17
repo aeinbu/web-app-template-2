@@ -9,9 +9,9 @@
   "author": "Arjan Einbu",
   "license": "ISC",
   "dependencies": {
-    "babel": "^6.5.1"
   },
   "devDependencies": {
+    "babel": "^6.5.1",
     "babel-preset-es2015": "^6.5.0",
     "browser-sync": "^2.11.1",
     "del": "^2.2.0",
