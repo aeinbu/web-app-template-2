@@ -59,7 +59,7 @@ gulp.task("build-js", ["clean-js"], function(){
     return gulp.src(jsSrcPath + "**/*.js")
         .pipe(sourcemaps.init())
         .pipe(concat("app.js"))
-        // .pipe(babel())
+        .pipe(babel())
         .pipe(gulp.dest(jsDestPath))
         .pipe(uglify())
         .pipe(rename("app.min.js"))
