@@ -78,7 +78,7 @@ gulp.task("build-html-templates", ["clean-html-templates"], function(){
 });
 
 gulp.task("clean-html-templates", function(){
-    return del([jsDestPath + "**/*", "!**/*.js"]);
+    return del([jsDestPath + "**/*", "!**/*.js", !"**/*.js.map"]);
 });
 
 
